@@ -20,14 +20,14 @@ public abstract class BaseEndpoint {
     protected BaseEndpoint() {
 
 
-        OkHttpClient.Builder okhhtpBuilder = new OkHttpClient.Builder();
+        OkHttpClient.Builder okHttpBuilder = new OkHttpClient.Builder();
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            okhhtpBuilder.addInterceptor(interceptor);
+            okHttpBuilder.addInterceptor(interceptor);
         }
 
-        OkHttpClient okHttpClient = okhhtpBuilder.build();
+        OkHttpClient okHttpClient = okHttpBuilder.build();
 
 
         retrofit = new Retrofit.Builder()
