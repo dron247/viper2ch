@@ -42,6 +42,7 @@ public class MainPresenterImpl extends AbstractPresenter implements MainPresente
     @Override
     public void resume() {
         mView.clearData();
+        // temporary, just to test 2ch api
         boardsStream
                 .subscribeOn(Schedulers.newThread())
                 .map(stringListMap -> {
